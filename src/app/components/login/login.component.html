@@ -1,0 +1,27 @@
+<div fxLayoutAlign= "center center" fxFlexFill>
+
+  <mat-card fxFlex="25">
+
+    <mat-toolbar color="primary">Login Page</mat-toolbar>
+    <form [formGroup]="form" (ngSubmit)="submit()" fxLayoutAlign="stretch" fxLayout="column" class="login-form">
+      <mat-error *ngIf = "incorrectCredentials">The user name or password are incorrect </mat-error>
+      <mat-form-field>
+        <mat-label>User Name</mat-label>
+        <input matInput formControlName="username" #userName type="text">
+        <mat-error *ngIf="form.get('username')?.hasError('required')">Username is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password">
+        <mat-error *ngIf="form.get('password')?.hasError('required')">Password is required</mat-error>
+      </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" style="margin-bottom: 20px;">Login</button>
+
+        <a mat-raised-button color="primary" routerLink="/Registration">Register</a>
+
+    </form>
+
+  </mat-card>
+</div>

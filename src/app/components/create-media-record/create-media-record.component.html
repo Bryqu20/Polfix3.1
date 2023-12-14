@@ -1,0 +1,37 @@
+<div style="margin-bottom: 20px;">
+  <mat-toolbar color="primary">
+    <span>Polfix</span>
+    <a mat-icon-button matTooltip="Home Page" routerLink="/home"> <mat-icon>home</mat-icon></a>
+    <a mat-icon-button matTooltip="Logout" routerLink="/"> <mat-icon>logout</mat-icon></a>
+    <a mat-icon-button matTooltip="Upload Image" routerLink="/UploadMedia"> <mat-icon>upload_file</mat-icon></a>
+  </mat-toolbar>
+</div>
+
+<div fxLayoutAlign= "center center" fxFlexFill>
+  <mat-card fxFlex="35">
+
+    <mat-toolbar color="primary">Upload your photo</mat-toolbar>
+      <form [formGroup]="form" (ngSubmit)="submit()" fxLayoutAlign="stretch" fxLayout="column" class="upload-form">
+        <!-- <mat-error *ngIf = "incorrectCredentials">The user name or password are incorrect </mat-error> -->
+        <mat-form-field>
+          <mat-label>Select Genre</mat-label>
+          <mat-select color="accent" formControlName="Genre">
+            <mat-option *ngFor="let genre of genreList" [value]="genre.viewValue">{{genre.viewValue}}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="form.get('Genre')?.hasError('Genre')">Genre is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Description of the image</mat-label>
+          <input matInput type="Description" formControlName="Description">
+          <mat-error *ngIf="form.get('Description')?.hasError('Description')">Description is required</mat-error>
+        </mat-form-field>
+
+
+          <mat-label>Upload Image</mat-label>
+          <input id = "uploadFile" color="primary" type="File" (change)="handleUpload($event)" accept=".jpeg,.png,.psd">
+
+        <button mat-raised-button color="primary" style="margin-bottom: 20px;" type="submit"> Upload your image</button>
+      </form>
+  </mat-card>
+</div>

@@ -1,0 +1,27 @@
+.photo-wrapper{
+  max-width: 900px;
+  margin: 20px auto;
+  position: relative;
+
+}
+
+.descriptionContainer{
+  background-color: #7b1fa2;
+  height: 50px auto;
+  border-radius: 5px;
+  width: 60%;
+  overflow: hidden;
+  margin: 10px;
+  color: white;
+}
+.photo{
+  width: 60%;
+  height: 600px;
+  margin: 10px;
+}
+
+img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}

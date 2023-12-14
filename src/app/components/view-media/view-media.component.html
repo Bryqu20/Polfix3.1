@@ -1,0 +1,31 @@
+<div>
+  <mat-toolbar color="primary">
+    <span>Polfix</span>
+    <a mat-icon-button matTooltip="Home Page" routerLink="/home"> <mat-icon>home</mat-icon></a>
+    <a mat-icon-button matTooltip="Logout" routerLink="/"> <mat-icon>logout</mat-icon></a>
+    <a mat-icon-button matTooltip="Upload Image" routerLink="/UploadMedia"> <mat-icon>upload_file</mat-icon></a>
+  </mat-toolbar>
+</div>
+
+<div fxLayout="column" fxLayoutAlign="center center">
+  <div class="photo" >
+    <img src="{{getImgUrl()}}">
+  </div>
+  <div class="descriptionContainer">
+    <mat-label>Genre:</mat-label>
+    <p>{{photo.genres}}</p>
+    <mat-label> Description:</mat-label>
+    <p>{{photo.description}}</p>
+  </div>
+</div>
+  <!-- <div >
+    <img src="{{getImgUrl()}}" >
+  </div>
+  <div>
+    <mat-label color="primary">Genre</mat-label>
+    <p>{{photo.genres}}</p>
+    <mat-label color="primary"> Description </mat-label>
+    <p>{{photo.description}}</p>
+  </div> -->
+
+

@@ -1,0 +1,59 @@
+.photos{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 20px auto;
+  position: relative;
+}
+
+.actionContainer{
+  background-color: #7b1fa2;
+  height: 50px;
+  border-radius: 5px;
+  width: 280px;
+  overflow: hidden;
+  margin: 10px;
+}
+
+.photo{
+  width: 280px;
+  margin: 10px;
+  height: 330px;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: #202020;
+  transition-duration: 0.3s;
+  cursor: pointer;
+
+  &-button-container{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  &-buttonP{
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 172px;
+  }
+  &-thumb-container{
+    background-color: #000;
+    position: relative;
+    height: 172px;
+    color: #fff;
+    text-align: center;
+  }
+
+  &-thumbnail{
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 172px;
+  }
+}
+

@@ -1,0 +1,49 @@
+<div>
+    <mat-toolbar color="primary">
+      <span>Polfix</span>
+      <a mat-icon-button matTooltip="Home Page" routerLink="/home"> <mat-icon>home</mat-icon></a>
+      <a mat-icon-button matTooltip="Logout" routerLink="/"> <mat-icon>logout</mat-icon></a>
+      <a mat-icon-button matTooltip="Upload Image" routerLink="/UploadMedia"> <mat-icon>upload_file</mat-icon></a>
+    </mat-toolbar>
+</div>
+
+<div>
+  <mat-form-field>
+    <mat-label>Filter by genres</mat-label>
+    <mat-select color="accent" (selectionChange)="onFilterChange($event)">
+      <mat-option *ngFor="let genre of genreList" [value]="genre.value">{{genre.viewValue}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<!-- <div class="photos">
+  <ng-container *ngFor="let media of filteredMedia">
+
+    <div>
+      <div>
+        <img src="{{getImgSrc(media.filePath)}}">
+      </div>
+      <div class = photo-button-container>
+        <button mat-icon-button color="primary" matTooltip="Delete Photo" (click)="openDeleteDialog(media.id)"><mat-icon>delete</mat-icon></button>
+        <a mat-icon-button color = "primary" routerLink="/editMedia/{{media.id}}" matTooltip="Edit Photo"><mat-icon>edit</mat-icon></a>
+        <a mat-icon-button color = "primary" routerLink="/viewMedia/{{media.id}}" matTooltip="View Photo"><mat-icon>visibility</mat-icon></a>
+      </div>
+    </div>
+  </ng-container>
+</div> -->
+
+<div fxLayout="row" fxLayoutAlign="center center">
+  <ng-container *ngFor="let media of filteredMedia">
+    <div fxLayout="column">
+      <div class="photo">
+        <img src="{{getImgSrc(media.filePath)}}">
+      </div>
+      <div class="actionContainer">
+        <button mat-icon-button  style="color: white;" matTooltip="Delete Photo" (click)="openDeleteDialog(media.id)"><mat-icon>delete</mat-icon></button>
+        <a mat-icon-button color style="color: white;" routerLink="/editMedia/{{media.id}}" matTooltip="Edit Photo"><mat-icon>edit</mat-icon></a>
+        <a mat-icon-button color style="color: white;" routerLink="/viewMedia/{{media.id}}" matTooltip="View Photo"><mat-icon>visibility</mat-icon></a>
+      </div>
+    </div>
+
+  </ng-container>
+</div>
