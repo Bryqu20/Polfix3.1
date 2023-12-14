@@ -53,4 +53,4 @@ jobs:
           app-name: 'Polfix'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5F1F04D9FA0F4B95853F6A0AF5B3E472 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_00AB9590A1124F61A90B5E9500CD313D }}
