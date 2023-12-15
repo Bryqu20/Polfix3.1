@@ -9,7 +9,7 @@ import { UpdateMediaComponent } from './components/update-media/update-media.com
 
 const routes: Routes = [
   {
-    path:'',
+    path:'/',
     component: LoginComponent
   },
   {
